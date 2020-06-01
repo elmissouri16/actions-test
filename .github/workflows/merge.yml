@@ -18,7 +18,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
 
-    - name: Starting Merge Action
+    - name: merge-action
      uses: tretuna/sync-branches@1.1.0
         with:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
