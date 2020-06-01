@@ -11,6 +11,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
+    - run: echo ${{github.ref}}
 
     - name: merge-action
       uses: tretuna/sync-branches@1.1.0
@@ -18,10 +19,4 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           FROM_BRANCH: "master"
           TO_BRANCH: "release"
-      # uses: robotology/gh-action-nightly-merge@v1.2.0
-      # with:
-      #   stable_branch: 'master'
-      #   development_branch: 'release'
-      #   allow_ff: false
-      # env:
-      #   GITHUB_TOKEN: ${{ secrets.TOKEN }}
+
