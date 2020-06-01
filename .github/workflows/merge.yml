@@ -1,16 +1,10 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+name: Merging Branches
 on:
   push:
     branches: [ master ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  Merge Branches:
+  Merge-Branches:
 
     runs-on: ubuntu-latest
 
@@ -18,9 +12,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
 
-    - name: Starting Merge Action
-     uses: tretuna/sync-branches@1.1.0
-        with:
+    - name: merge-action
+      uses: tretuna/sync-branches@1.1.0
+      with:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           FROM_BRANCH: "master"
           TO_BRANCH: "release"
