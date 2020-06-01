@@ -4,7 +4,7 @@ on:
     branches: [ master ]
 
 jobs:
-  Merge Branches:
+  Merge-Branches:
 
     runs-on: ubuntu-latest
 
